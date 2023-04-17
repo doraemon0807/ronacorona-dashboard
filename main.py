@@ -189,40 +189,5 @@ def update_graph(value):
     return line_graph, bars_graph
 
 
-# @app.callback(
-#     Output("country_bar", "figure"),
-#     [Input("country", "value")],
-# )
-# def update_bar(value):
-#     if value is None:
-#         df = make_global_df()
-#         value = "Global"
-#     else:
-#         df = make_country_df(value)
-
-#     bar_df = df[["confirmed", "deaths", "recovered"]].sum()
-#     bar_df = bar_df.reset_index(name="count")
-#     bar_df = bar_df.rename(columns={"index": "condition"})
-
-#     bars_graph = px.bar(
-#         bar_df,
-#         x="condition",
-#         y="count",
-#         template="plotly_dark",
-#         title=f"Total {value} Cases",
-#         hover_data={"count": ":,"},
-#         labels={"condition": "Condition", "count": "Count", "color": "Condition"},
-#     )
-
-#     bars_graph.update_traces(marker_color=["#54a0ff", "#ee5253", "#1dd1a1"])
-
-#     bars_graph.update_layout(
-#         paper_bgcolor="rgba(0,0,0,0)",
-#         plot_bgcolor="rgba(0,0,0,0)",
-#     )
-
-#     return bars_graph
-
-
 if __name__ == "__main__":
     app.run_server(debug=True)
