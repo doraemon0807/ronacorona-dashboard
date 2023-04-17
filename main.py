@@ -19,6 +19,8 @@ stylesheets = [
 
 app = Dash(__name__, external_stylesheets=stylesheets)
 
+server = app.server
+
 bubble_map = px.scatter_geo(
     countries_df,
     size="Confirmed",
