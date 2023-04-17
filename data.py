@@ -19,6 +19,9 @@ countries_df = (
     .reset_index()
 )
 
+dropdown_options = countries_df.sort_values("Country_Region").reset_index()
+dropdown_options = dropdown_options["Country_Region"]
+
 
 def make_df(condition, country=None):
     df = pd.read_csv(f"data/time_{condition}.csv")
